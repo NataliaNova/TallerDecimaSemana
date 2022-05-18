@@ -1,0 +1,35 @@
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=Hubballi&family=Montserrat:wght@200&family=Orbitron&family=Oswald:wght@400;700&family=Roboto:wght@100&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="container">
+  <img
+    class="digimon"
+    src="https://www.pngmart.com/files/4/Digimon-PNG-Photos.png"
+    alt=""
+  />
+
+  <div class="row">
+    <h1 class="display-1 text-center text-danger">
+      ¡Todos los Digimon están aquí!
+    </h1>
+    <div class="col-md-10 mx-auto">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table-warning">
+            <th scope="col">Nombre</th>
+            <th scope="col">Nivel</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of datosApi">
+          <tr class="table table-striped table-hover">
+            <td>{{ item.name }}</td>
+            <td>{{ item.level }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-sm-4"
+      *ngFor="
+        let item of datosApi | paginate: { itemsPerPage: 9, currentPage: pages }
+      "
+    >
+      <div class="card my-1 " style="width: 18rem height inherit">
+        <img src="{{ item.img }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ item.name }}</h5>
+          <a class="btn btn-danger" (click)="botonLevel(item.level)"
+            >Conoce el nivel de {{ item.name
+            }}<i class="bi bi-hand-index-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <br /><br />
+    <p class="text-center">
+      <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+    </p>
+  </div>
+</div>
